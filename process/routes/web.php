@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/thank-you', function () {
-    return view('welcome');
+    return view('thankyou');
 });
 
 
-Route::post('/form', function () {
-    return view('welcome');
-});
+Route::post('/form', 'TransactionController@upload');
+// Route::post('/form', function () {
+//     return view('thankyou');
+// });

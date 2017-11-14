@@ -95,7 +95,7 @@
         <div style="width: 80%; margin: auto;">
 
           <form class="form-horizontal" method="post" action="/form" class="form-horizontal" enctype="multipart/form-data">
-
+ {{ csrf_field() }}
                                   <!-- File Button -->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="filebutton">Stripe Data</label>
