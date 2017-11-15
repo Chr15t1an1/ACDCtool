@@ -20,7 +20,6 @@ Route::get('/thank-you', function () {
 });
 
 
+Route::get('/lists','TransactionController@show');
+
 Route::post('/form', 'TransactionController@upload');
-// Route::post('/form', function () {
-//     return view('thankyou');
-// });

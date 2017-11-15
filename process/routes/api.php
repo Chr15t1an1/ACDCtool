@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Transaction;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +17,13 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/{id}', function () {
-    return view('welcome');
+Route::get('/{id}/{filename}', function ($id, $filename) {
+    $model = Transaction::findOrFail($id);
+    $model->isDone = 1;
+    $pubPath = url('/').'/exports'.'/'.$filename;
+    $model->publicPath = $pubPath;
+    $model->save();
+    return response('ok', 200);
+
+
 });
