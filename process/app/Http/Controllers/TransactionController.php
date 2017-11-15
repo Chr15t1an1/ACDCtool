@@ -32,7 +32,7 @@ public function processFile($exportFileid,$pathToInputFile,$pathToExportFolder,$
   $ch = "python3"." " .app_path().'/python/process.py ' . $exportFileid . ' ' . $pathToInputFile . ' ' . $pathToExportFolder . ' ' . $outputFileName. ' ' . $url;
 
   $a = shell_exec($ch);
-  
+
   return $a;
 }
 
@@ -75,8 +75,7 @@ public function show()
 {
 // return "cats";
 $lists = Transaction::all();
-
-return $lists;
+return view('list')->with('lists', $lists);
 
 }
 
