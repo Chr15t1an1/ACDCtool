@@ -74,7 +74,7 @@ public function upload(Request $request)
 public function show()
 {
 // return "cats";
-$lists = Transaction::all();
+$lists = Transaction::all()->where('isDone', 1);
 return view('list')->with('lists', $lists);
 
 }
