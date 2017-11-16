@@ -84,7 +84,7 @@
                     <?php
 
                     foreach ($lists as $list) {
-                      print("<a href ='".$list->publicPath."'> ".$list->publicPath." </a><br/>");
+                      print("<p><a href ='".$list->publicPath."'> ".$list->publicPath." </a> - <strong>".$list->created_at."</strong></p><br/>");
                     }
 
 
